@@ -7,8 +7,8 @@ for ITERATING through SEQUENCES, including:
   -- The FIND pattern (via LINEAR SEARCH)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Ryan Walter.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -75,7 +75,7 @@ def sum_radii(circles):
       :type circles:  list[rg.Circle]    or tuple(rg.Circle)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -87,7 +87,10 @@ def sum_radii(circles):
     #       Instead, use explicit loops, as you have for other problems.
     # ------------------------------------------------------------------
 
-
+    total = 0
+    for circle in circles:
+        total = total + circle.radius
+    return total
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through PART of the sequence,
 # perhaps BACKWARDS, as in the   count_last_n_odds   problem below.
@@ -149,11 +152,16 @@ def count_last_n_odds(integers, n):
       :type n:        int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
 
+    count = 0
+    for k in range(len(integers)-1, len(integers)-n-1,-1):
+        if integers[k] % 2 == 1:
+            count = count + 1
+    return count
 # ----------------------------------------------------------------------
 # Some problems iterate (loop) through PART of the sequence,
 # stopping when the loop FINDS something of interest
@@ -223,9 +231,16 @@ def index_of_first_negative(numbers):
       :type numbers: list[float]   or tuple[float]
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            return k
+    return -1
+
+
 
 
 def run_test_contains_an_a():
@@ -280,7 +295,7 @@ def contains_an_a(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -293,6 +308,11 @@ def contains_an_a(s):
     #   Use an explicit loop, as you have done in the other problems.
     #   No fair using the   count   or   find   string methods.
     # ------------------------------------------------------------------
+
+    for k in s:
+        if k =='a':
+            return True
+    return False
 
 
 # ----------------------------------------------------------------------
